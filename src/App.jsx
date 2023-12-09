@@ -20,6 +20,9 @@ function App() {
         const res = await fetch(
           `http://data.fixer.io/api/latest?access_key=${API_KEY}`
         );
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
         const data = await res.json();
         console.log(data);
         setCurrencyRates(data.rates);
@@ -33,6 +36,13 @@ function App() {
   }, []);
 
   const fixedCurrency = (number) => {
+    // Check if 'number' is a valid numeric value
+    if (typeof number !== "number" || isNaN(number)) {
+      console.error("Invalid numeric value:", number);
+      return 0; // or any default value you prefer
+    }
+
+    // Call toFixed only if 'number' is a valid number
     return parseFloat(number.toFixed(2));
   };
 
@@ -112,7 +122,7 @@ function App() {
         </h2>
         <p id="currencyOne" className="oneCurrencyText">
           {" "}
-          {fixedCurrency(amountOne)} {currencyOne} equals{" "}
+          {amountOne} {currencyOne} equals{" "}
         </p>
         <p className={`rateText ${isDarkMode ? "dark-text" : ""}`} id="ptag">
           {fixedCurrency(amountTwo)} {currencyTwo}
