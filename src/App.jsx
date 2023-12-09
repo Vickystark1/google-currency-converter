@@ -18,11 +18,12 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        await axios
-          .get(`http://data.fixer.io/api/latest?access_key=${API_KEY}`)
-          .then((res) => setCurrencyRates(res.data.rates));
+        const res = await axios.get(
+          `http://data.fixer.io/api/latest?access_key=${API_KEY}`
+        );
+        setCurrencyRates(res.data.rates);
       } catch (err) {
-        console.log(err);
+        console.log("error fetching data", err);
         setCurrencyRates(null);
       }
     }
