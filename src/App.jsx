@@ -16,13 +16,18 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    axios
-      .get(`http://data.fixer.io/api/latest?access_key=${API_KEY}`)
-      .then((res) => setCurrencyRates(res.data.rates))
-      .catch((err) => {
+    async function fetchData() {
+      try {
+        await axios
+          .get(`http://data.fixer.io/api/latest?access_key=${API_KEY}`)
+          .then((res) => setCurrencyRates(res.data.rates));
+      } catch (err) {
         console.log(err);
         setCurrencyRates(null);
-      });
+      }
+    }
+
+    fetchData();
   }, []);
 
   const fixedCurrency = (number) => {
