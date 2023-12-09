@@ -8,13 +8,15 @@ const CurrencyratesTwo = ({
 }) => {
   return (
     <div className="wrapper">
-      <input value={amount} />
+      <input value={amount} readOnly />
       <select
         value={currency}
         onChange={(e) => onCurrencyChange(e.target.value)}
       >
         {currencies.map((currency) => (
-          <option value={currency}>{currency}</option>
+          <option key={currency} value={currency}>
+            {currency}
+          </option>
         ))}
       </select>
     </div>

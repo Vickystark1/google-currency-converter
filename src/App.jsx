@@ -7,6 +7,8 @@ import { format } from "date-fns";
 function App() {
   const API_KEY = "64ebb02157d6a52bec77578030032739";
 
+  //https://api.exchangeratesapi.io/v1/latest?access_key =ab6cb52bad19f2430774aa072744a9bc
+
   const [currencyRates, setCurrencyRates] = useState([]);
   const [amountOne, setAmountOne] = useState(1);
   const [amountTwo, setAmountTwo] = useState(1);
@@ -18,13 +20,13 @@ function App() {
     async function fetchData() {
       try {
         const res = await fetch(
-          `http://data.fixer.io/api/latest?access_key=${API_KEY}`
+          `https://data.fixer.io/api/latest?access_key=${API_KEY}`
         );
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
         }
         const data = await res.json();
-        console.log(data);
+        console.log(data.rates);
         setCurrencyRates(data.rates);
       } catch (err) {
         console.log("error fetching data", err);

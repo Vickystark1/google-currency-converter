@@ -14,7 +14,9 @@ const Currencyrates = ({
         onChange={(e) => onCurrencyChange(e.target.value)}
       >
         {currencies.map((currency) => (
-          <option value={currency}>{currency}</option>
+          <option key={currency} value={currency}>
+            {currency}
+          </option>
         ))}
       </select>
     </div>
