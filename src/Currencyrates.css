@@ -1,0 +1,26 @@
+.wrapper {
+  background: #ffff;
+  display: grid;
+  grid-template-columns: 100px 80px;
+  border-radius: 14px;
+  width: 300px;
+  margin: 10px 0;
+}
+
+input,
+select {
+  color: #333;
+  width: 90px;
+  margin-left: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  width: 300px;
+  border-color: none;
+}
+select {
+  padding: 15px;
+  margin-left: 120px;
+}

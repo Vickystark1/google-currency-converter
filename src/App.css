@@ -1,0 +1,71 @@
+body {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#larkMode {
+  display: flex;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-mode .dark-text {
+  color: #cccccc;
+}
+
+.container {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+p {
+  color: black;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin-inline-end: 235px;
+}
+
+#currencyOne {
+  margin-inline-end: 205px;
+}
+
+.oneCurrencyText {
+  color: gray;
+  font-family: Roboto, HelveticaNeue, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.rareText {
+  color: #202124;
+  font-family: Google Sans, arial, sans-serif;
+  margin-bottom: 0;
+  font-size: 36rem;
+  font-weight: normal;
+}
+
+.date {
+  color: gray;
+  margin-bottom: 16px;
+  font-size: 12px;
+}
