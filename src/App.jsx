@@ -5,7 +5,7 @@ import CurrencyratesTwo from "./CurrencyratesTwo";
 import { format } from "date-fns";
 
 function App() {
-  const API_KEY = "41424cc1c62c833eac6dc4b442993b83";
+  const API_KEY = "64ebb02157d6a52bec77578030032739";
 
   const [currencyRates, setCurrencyRates] = useState([]);
   const [amountOne, setAmountOne] = useState(1);
