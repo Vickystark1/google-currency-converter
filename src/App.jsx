@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import "./App.css";
 import Currencyrates from "./Currencyrates";
 import CurrencyratesTwo from "./CurrencyratesTwo";
@@ -18,10 +17,12 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await axios.get(
+        const res = await fetch(
           `http://data.fixer.io/api/latest?access_key=${API_KEY}`
         );
-        setCurrencyRates(res.data.rates);
+        const data = await res.json();
+        console.log(data);
+        setCurrencyRates(data.rates);
       } catch (err) {
         console.log("error fetching data", err);
         setCurrencyRates(null);
