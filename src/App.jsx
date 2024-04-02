@@ -20,13 +20,13 @@ function App() {
     async function fetchData() {
       try {
         const res = await fetch(
-          `https://data.fixer.io/api/latest?access_key=${API_KEY}`
+          `http://data.fixer.io/api/latest?access_key=${API_KEY}`
         );
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
         }
         const data = await res.json();
-        console.log(data.rates);
+        console.log(data);
         setCurrencyRates(data.rates);
       } catch (err) {
         console.log("error fetching data", err);
@@ -113,15 +113,15 @@ function App() {
         >
           {isDarkMode ? "🌞" : "🌜"}
         </span>
-        <h2>
+        <h1>
           <span style={{ color: "#0000FF" }}>G</span>
           <span style={{ color: "#FF0000" }}>o</span>
           <span style={{ color: "#FFFF00" }}>o</span>
           <span style={{ color: "#0000FF" }}>g</span>
           <span style={{ color: "#008000" }}>l</span>
           <span style={{ color: "#FF0000", marginRight: "8px" }}>e </span>{" "}
-          <div>Currency Converter</div>
-        </h2>
+          <span className="curr">Currency Converter</span>
+        </h1>
         <p id="currencyOne" className="oneCurrencyText">
           {" "}
           {amountOne} {currencyOne} equals{" "}

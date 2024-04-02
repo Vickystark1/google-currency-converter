@@ -17,8 +17,13 @@ body.dark-mode {
   color: #ffffff;
 }
 
+
 .dark-mode .dark-text {
   color: #cccccc;
+}
+
+.dark-mode .curr{
+  color: #ffffff;
 }
 
 .container {
