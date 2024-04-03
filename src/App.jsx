@@ -20,7 +20,7 @@ function App() {
     async function fetchData() {
       try {
         const res = await fetch(
-          `http://data.fixer.io/api/latest?access_key=${API_KEY}`
+          `https://data.fixer.io/api/latest?access_key=${API_KEY}`
         );
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
