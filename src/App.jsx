@@ -5,7 +5,7 @@ import CurrencyratesTwo from "./CurrencyratesTwo";
 import { format } from "date-fns";
 
 function App() {
-  const API_KEY = "64ebb02157d6a52bec77578030032739";
+  const API_KEY = "22a7361b5280d3d53a1e10842ed8f7b6";
 
   //https://api.exchangeratesapi.io/v1/latest?access_key =ab6cb52bad19f2430774aa072744a9bc
 
