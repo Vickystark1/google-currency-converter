@@ -5,7 +5,7 @@ import CurrencyratesTwo from "./CurrencyratesTwo";
 import { format } from "date-fns";
 
 function App() {
-  const API_KEY = "22a7361b5280d3d53a1e10842ed8f7b6";
+  const API_KEY = "c07af4ad938ca9d0304682cc";
 
   //https://api.exchangeratesapi.io/v1/latest?access_key =ab6cb52bad19f2430774aa072744a9bc
 
@@ -19,15 +19,17 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch(
-          `http://data.fixer.io/api/latest?access_key=${API_KEY}`
+        const res = await fetch(`https://v6.exchangerate-api.com/v6/${API_KEY}/latest/AED`
         );
+        const data = await res.json();
+        console.log("ress",res);
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
-        }
-        const data = await res.json();
-        console.log(data);
-        setCurrencyRates(data.rates);
+        };
+        
+        console.log("res",res);
+        console.log("data",data);
+        setCurrencyRates(data.conversion_rates);
       } catch (err) {
         console.log("error fetching data", err);
         setCurrencyRates(null);
@@ -35,6 +37,31 @@ function App() {
     }
 
     fetchData();
+
+
+  //   async function fetchData1(){
+
+  //     const url = 'https://api.apilayer.com/currency_data/convert?base=USD&symbols=EUR,GBP';
+  // const options = {
+  //   method: 'GET',
+  //   headers: {
+  //     'X-RapidAPI-Key': '0fd734de30msh442b171a52a709fp1924ebjsnb74917afe620',
+  //     'X-RapidAPI-Host': 'currency-converter5.p.rapidapi.com'
+  //   }
+  // };
+  
+  // try {
+  //   const response = await fetch(url, options);
+  //   console.log("res11",response);
+  //   const result = await response.text();
+  //   console.log(result);
+  // } catch (error) {
+  //   console.error("error",error);
+  // }
+  //   }
+
+  //   fetchData1();
+
   }, []);
 
   const fixedCurrency = (number) => {
