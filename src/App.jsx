@@ -143,7 +143,7 @@ function App() {
         </span>
        <div className="container">
         
-        <h1 className="title" style={{fontSize:"30px"}} >
+        <h1 className="title"  >
           <span style={{ color: "#0000FF" }}>G</span>
           <span style={{ color: "#FF0000" }}>o</span>
           <span style={{ color: "#FFFF00" }}>o</span>
