@@ -3,6 +3,7 @@ import "./App.css";
 import Currencyrates from "./Currencyrates";
 import CurrencyratesTwo from "./CurrencyratesTwo";
 import { format } from "date-fns";
+import { Col, Container, Stack } from "react-bootstrap";
 
 function App() {
   const API_KEY = "c07af4ad938ca9d0304682cc";
@@ -131,7 +132,7 @@ function App() {
 
   return (
     <>
-      <div className="container">
+      <div className="container" style={{width:"maxContent"}}>
         <span
           id="larkMode"
           style={{ cursor: "pointer" }}
@@ -140,7 +141,9 @@ function App() {
         >
           {isDarkMode ? "🌞" : "🌜"}
         </span>
-        <h1>
+       <div className="container">
+        
+        <h1 className="title" style={{fontSize:"30px"}} >
           <span style={{ color: "#0000FF" }}>G</span>
           <span style={{ color: "#FF0000" }}>o</span>
           <span style={{ color: "#FFFF00" }}>o</span>
@@ -149,6 +152,8 @@ function App() {
           <span style={{ color: "#FF0000", marginRight: "8px" }}>e </span>{" "}
           <span className="curr">Currency Converter</span>
         </h1>
+       </div>
+          
         <p id="currencyOne" className="oneCurrencyText">
           {" "}
           {amountOne} {currencyOne} equals{" "}
