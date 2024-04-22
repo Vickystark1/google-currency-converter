@@ -149,7 +149,7 @@ function App() {
           <span style={{ color: "#FFFF00" }}>o</span>
           <span style={{ color: "#0000FF" }}>g</span>
           <span style={{ color: "#008000" }}>l</span>
-          <span style={{ color: "#FF0000", marginRight: "8px" }}>e </span>{" "}
+          <span style={{ color: "#FF0000", marginRight: "2px" }}>e </span>{" "}
           <span className="curr">Currency Converter</span>
         </h1>
        </div>
