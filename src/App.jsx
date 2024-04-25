@@ -82,7 +82,8 @@ function App() {
         (amountOne * currencyRates[currencyTwo]) / currencyRates[currencyOne]
       )
     );
-    setAmountOne(amountOne);
+    const amountpOne= amountOne;
+    setAmountOne(amountpOne);
   };
 
   const handleAmountTwoChange = (amountTwo) => {
@@ -119,6 +120,13 @@ function App() {
   }, [currencyRates]);
 
   useEffect(() => {
+    if (currencyRates) {
+      handleAmountOneChange(amountOne);
+      setAmountOne(amountOne)
+    }
+  }, [amountOne]);
+
+  useEffect(() => {
     // Apply the dark or light mode class to the body
     document.body.classList.toggle("dark-mode", isDarkMode);
     document.body.classList.toggle("light-mode", !isDarkMode);
@@ -153,8 +161,9 @@ function App() {
           <span className="curr">Currency Converter</span>
         </h1>
        </div>
-          
-        <p id="currencyOne" className="oneCurrencyText">
+          <div className="d-flex flex-column  justify-content-center w-75 flext-wrap ps-4">
+
+        <p id="currencyOne" className="oneCurrencyText w-100">
           {" "}
           {amountOne} {currencyOne} equals{" "}
         </p>
@@ -162,6 +171,7 @@ function App() {
           {fixedCurrency(amountTwo)} {currencyTwo}
         </p>
         <p className="date">{format(new Date(), "dd/MM , h:mm")}</p>
+          </div>
         <Currencyrates
           amount={amountOne}
           currency={currencyOne}
